@@ -1,3 +1,7 @@
+<?php
+    include("models/article.php"); 
+    $article = new Article();
+?>
 <!DOCTYPE html>
 
 <html>
@@ -60,14 +64,16 @@
                 <article id='newsFeed'>
                     <h3>//Latest updates</h3>
                     <ul id='lastNews'>
-                        <li><b>25/09/2020</b>- Creation of this website</li>
-                        <li><b><a href='#'>See all</a></b></li>
+                        <?php foreach($article->getLastArticles() as $a){ ?>
+                            <li><b><?=$a["Date_parution"]?></b>-<a href='/portoflio/article/<?=$a["id"]?>'><?=$a["Nom"]?></a></li>
+                        <?php } ?>
+                        <li><b><a href='/portoflio/articles'>See all</a></b></li>
                     </ul>
                 </article>
 
                 <footer>
                     <i>This website does not speak for my workplace, my friends, my family, my pets. I'm the only responsible person for this mess. If you want to see more of this, you can go <a href='#'>here</a> or <a href='#'>there</a>.</i>
-                    <i> All original written and graphical content is licensed under a <a href='#'>Creative Commons Attribution 4.0 International License</a></i>
+                    <i> All original written and graphical content is licensed under a <a href='https://creativecommons.org/licenses/by/4.0/'>Creative Commons Attribution 4.0 International License</a></i>
                 </footer>
 
             </section>

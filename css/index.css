@@ -39,7 +39,6 @@ a {
 
 a:hover {
     color:#dec303;
-    transition: color 0.2s ease;
 }
 
 /* ******************************************************** */
@@ -182,7 +181,31 @@ header h3 {
     color:white;
 }
 
+#articlesZone h3 {
+    margin-bottom:0.6em;
+    font-size:1em;
+}
 
+#articlesZone {
+    font-size:1.2em;
+}
+
+#articlesZone p {
+    color:white;
+    margin:0;
+}
+
+#articlesZone p::before {
+    content:"-";
+    color:orange;
+    margin-right:0.5em;
+}
+
+#articlesZone b{
+    color:#e46a6a;
+    font-weight:normal;
+    margin-right:0.5em;
+}
 /* ******************************************************** */
 
 
