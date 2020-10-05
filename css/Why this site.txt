@@ -1,0 +1,23 @@
+<p>
+Hi I'm Sam from Marseille.<br>
+If you are here, it's because you are lost on internet nor you know me.
+This place is where I talk about my internet experience as a //web developer// (who wants to become sysadmin)
+</p>
+
+<p>
+This website's purpose is to share my passion to anyone who has the will to read my articles.
+</p>
+
+#I will talk about:
+- Web development (//php//,//WAMP//,//Symfony//)
+- //Arduino// and //Raspberry Pi//
+- My journey to build a new PC
+- The challenges I've done on /a:codewars.com:Codewars/
+- My Vim tricks/ressources
+- Some ressources
+- Maybe some tutorials if I consider myself good enought
+
+<p>I hope you'l have a good time learning or just inspiring yourself on this website.<br>
+Good reading fellow coder.
+Seeya on the web ! 
+</p>

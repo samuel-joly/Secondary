@@ -21,7 +21,7 @@ html {
 }
 
 body {
-    width:70vw;
+    width:50%;
 
     margin:auto;
     padding:0.5em 1.5em 1em 1.5em;
@@ -41,6 +41,159 @@ a:hover {
     color:#dec303;
 }
 
+.mainList :not(h3) {
+    font-size:1.06em;
+}
+
+.mainList ul {
+    color:white;
+
+    padding:0;
+    margin-top:0.2em;;
+}
+
+.mainList ul li {
+    display:flex;
+    align-items:center;
+}
+
+.mainList ul li p {
+    color:#cfefb7;
+    margin-top:0;
+    margin-bottom:0;
+    margin-right:0.5em;
+}
+
+.mainList ul li p:before, .mainList ul li b:before {
+    content:"-";
+    color:orange;
+    margin-right:0.5em;
+    text-decoration:none;
+}
+
+.mainList ul li a {
+    margin-left:0.4em;
+}
+
+.inputBox {
+    display:flex;
+    flex-direction:column;
+}
+
+.adminForm {
+    width:60%;
+
+    margin:auto;
+    padding:1em;
+
+    color:white;
+    font-size:1.2em;
+}
+
+.inputBox {
+    margin-top:0.5em;
+}
+
+.inputContainer {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+
+    margin:0;
+    padding:0;
+}
+
+.inputBlox input, .inputBox textarea {
+    font-size:1.2em;
+    max-width:99%;
+}
+
+.inputBox select {
+    font-size:1em;
+}
+
+.w-100 {
+    width:30em;
+    flex:100;
+}
+
+.submitZone {
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+}
+
+.submitBtn {
+    width:5em;
+    padding:0.6em;
+    margin:0.5em;
+
+    background:#313131;
+    outline:none;
+    border:1px dashed #76ff86;
+
+    color:white;
+
+    align-self:flex-end;
+}
+
+.submitBtn:hover {
+    transition: all 0.3s ease;
+    cursor:pointer;
+
+    background:#76ff86;
+    border-color:rgba(0,0,0,0);
+
+    color:black;
+}
+
+.submitBtnSecondary {
+    width:5em;
+
+    padding:0.6em;
+    margin:0.5em;
+
+    background:#313131;
+    outline:none;
+    border:1px dashed orange;
+
+    color:white;
+}
+
+.submitBtnSecondary:hover {
+    transition: all 0.3s ease;
+    cursor:pointer;
+
+    background:orange;
+    border-color:rgba(0,0,0,0);
+    
+    color:black;
+}
+
+.hidden {
+    display:none;
+}
+
+.articleListTitle {
+    font-size:1.1em !important;
+    color:#7cf9ff !important;
+    margin-bottom:0 !important;
+}
+
+.articleListElement {
+    margin-top:0;
+    margin-bottom:0.2em;
+}
+
+.articleListElement:before {
+    content:"-";
+    color:orange;
+    margin-right:0.3em;
+}
+
+#art-desc b {
+    color:orange;
+}
 /* ******************************************************** */
 
 
@@ -93,7 +246,8 @@ header a:hover {
 }
 
 header h3 {
-    margin-bottom:0.7em;
+    margin-top:0.5em;
+    margin-bottom:0.3em;
     font-size:1.3em;
     color:#76ff86;
 }
@@ -111,42 +265,16 @@ header h3 {
 
 /* ******************************************************** */
 
-#mainPage ul {
-    color:white;
-    font-size:1.2em;
-
-    padding:0;
-    margin-top:0.2em;;
-}
-
-#mainPage ul li {
-    display:flex;
-    align-items:center;
-}
-
-#mainPage ul li p {
-    color:#cfefb7;
-    margin-top:0;
-    margin-bottom:0;
-    margin-right:0.5em;
-}
-
-#mainPage ul li p:before {
-    content:"-";
-    color:orange;
-    margin-right:0.5em;
-    text-decoration:none;
-}
-
-#mainPage ul li a {
-    margin-left:0.4em;
-}
-
-#mainPage h3 {
+#mainPage h3, .mainList h3 {
     margin-top:0.7em;
     margin-bottom:0;
     font-size:1.2em;
     color:#76ff86;
+}
+
+#mainPage h3 small {
+    font-size:0.7em;
+    color:orange;
 }
 
 #mainPage h3 img {
@@ -160,51 +288,19 @@ header h3 {
     margin-bottom:2em;
 }
 
-#lastNews li b{
-    color:#e46a6a;
-    margin-right:0.5em;
-    font-weight:normal;
+#articleTitle{
+    display:flex;
+    flex-direction:column;
+    font-size:1.5em !important;
 }
 
-#lastNews li b::before{
-    content:"-";
-    color:orange;
-    margin-right:0.5em;
-}
 
-#lastNews li b a {
-    margin:0;
-    text-decoration:underline;
-}
-
-#lastNews li {
+#art-desc{
     color:white;
-}
 
-#articlesZone h3 {
-    margin-bottom:0.6em;
-    font-size:1em;
-}
-
-#articlesZone {
     font-size:1.2em;
-}
-
-#articlesZone p {
-    color:white;
-    margin:0;
-}
-
-#articlesZone p::before {
-    content:"-";
-    color:orange;
-    margin-right:0.5em;
-}
-
-#articlesZone b{
-    color:#e46a6a;
-    font-weight:normal;
-    margin-right:0.5em;
+    letter-spacing:0.01em;
+    text-align:justify;
 }
 /* ******************************************************** */
 

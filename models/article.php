@@ -1,7 +1,4 @@
 <?php
-
-require_once("bdd.php");
-
 class Article extends Bdd{
     
     public function getArticle($id) {
@@ -12,22 +9,32 @@ class Article extends Bdd{
     }
 
     public function getLastArticles(){
-        $sth = $this->pdo->prepare("SELECT * FROM article ORDER BY Date_parution DESC");
+        $sth = $this->pdo->prepare("SELECT * FROM article ORDER BY Date_parution DESC LIMIT 4");
         if($sth->execute()) {
             return $sth->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 
     public function addArticle($args){
-        $sth = $this->pdo->prepare("
-        INSERT INTO article(id, Nom, Date_parution, Description) 
-        VALUES (NULL, ?, CURRENT_DATE, ?)");
+        $sth = $this->pdo->prepare("SELECT * FROM article WHERE Nom = ?");
+        if($sth->execute([$args[0]])) {
+            if(empty($sth->fetchAll())) {
+                $sth = $this->pdo->prepare("
+                INSERT INTO article(id, Nom, Date_parution, Description, Groupe) 
+                VALUES (NULL, ?, CURRENT_DATE, ?, ?)");
 
-        if($sth->execute($args)) {
-            return true;
-        } else {
-            return [false=>$args];
+                if($sth->execute($args)) {
+                    return ["error"=>true];
+                } else {
+                    return ["error"=>false,
+                            "message"=>"SQL error."];
+                }
+            } else {
+                return ["error"=>false,
+                        "message"=>"Article title already taken."];
+            }
         }
+
     }
     
     public function getAllArticles() {
@@ -36,5 +43,11 @@ class Article extends Bdd{
             return $sth->fetchAll(PDO::FETCH_ASSOC);
         }
     }
+    
+    public function markupHtml($str) {
+        include(ROOT."models/markupHtml.php");
+        $markup = new markupHtml($str);
+        return $markup->text;
+    }
+
 }
-?>
