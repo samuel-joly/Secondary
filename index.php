@@ -4,7 +4,7 @@
     }
 
     if(!defined("ROOT")) {
-        define("ROOT", getcwd()."\\");
+        define("ROOT", getcwd()."/");
     }
 
     require_once(ROOT."models/bdd.php");
